@@ -7,7 +7,7 @@ on:
 jobs:
   first-workflosw-job:
     name: first job
-    runs -on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
      - name: run bash command
        run: echo "first workflow"
