@@ -24,7 +24,8 @@ jobs:
         shell: bash
 
       - name: Print input value
-        run: echo "Version: ${{ github.event.inputs.versionName }}"
+        run: 
+         echo "version: ${{ github.event.inputs.versionName }}"
 
       - name: Set up JDK
         uses: actions/setup-java@v3
