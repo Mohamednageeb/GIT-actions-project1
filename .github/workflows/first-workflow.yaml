@@ -17,15 +17,15 @@ jobs:
         shell: bash
 
       - name: checkout step
-        uses: actions/checkout@v4 
+        uses: actions/checkout@v4
         
       - name: after checkout action
         run: ls 
-        shell: bash 
+        shell: bash
 
-      - name: Print input value  # ← Fixed: space after hyphen
+      - name: Print input value  # ← This was line 27 (now properly indented)
         run: echo "Version: ${{ github.event.inputs.versionName }}"
-        
+
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
