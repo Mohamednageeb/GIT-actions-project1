@@ -1,5 +1,4 @@
 name: corn-workflow
-
 on:
   schedule:
     - corn: "0/5 * * * *"
