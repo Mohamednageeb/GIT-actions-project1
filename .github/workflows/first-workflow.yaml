@@ -1,4 +1,4 @@
-name: first workflow using dispatch
+name: first workflow 
 on:
  repository_dispatch:
   types: [test]
