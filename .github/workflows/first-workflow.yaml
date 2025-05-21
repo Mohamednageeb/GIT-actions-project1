@@ -7,14 +7,16 @@ on:
    branches:
     - "main"
 
+   types: [opened, closed]
+
 jobs:
   first-workflosw-job:
     name: first job
     runs-on: ubuntu-latest
     steps:
-   #  - name: before checkout action
-    #   run: ls
-     #  shell: bash
+     - name: before checkout action
+       run: ls
+       shell: bash
 
      - name: checkout step
        uses: actions/checkout@v4 
