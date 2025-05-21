@@ -1,30 +1,37 @@
-name: first workflow 
+name: first workflow
 on:
- repository_dispatch:
-  types: [test]
-
+  repository_dispatch:
+    types: [test]
+  
   push:
-   branches:
-    - "main"
-
-   types: [opened, closed]
+    branches:
+      - "main"
+  
+  pull_request:
+    types: [opened, closed]
 
 jobs:
-  first-workflosw-job:
+  first-workflow-job:
     name: first job
     runs-on: ubuntu-latest
     steps:
-     - name: before checkout action
-       run: ls
-       shell: bash
+      - name: before checkout action
+        run: ls
+        shell: bash
 
-     - name: checkout step
-       uses: actions/checkout@v4 
-       
-     - name: after checkout action
-       run: ls 
-       shell: bash 
-       
-     - name: run maven
-       run: mvn clean package 
-       shell: bash
+      - name: checkout step
+        uses: actions/checkout@v4 
+        
+      - name: after checkout action
+        run: ls 
+        shell: bash 
+        
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          
+      - name: run maven
+        run: mvn clean package 
+        shell: bash
