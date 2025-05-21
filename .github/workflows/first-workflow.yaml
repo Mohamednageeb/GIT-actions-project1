@@ -3,7 +3,11 @@ on:
   repository_dispatch:
     types: [test]
   
-
+  push:
+    branches:
+      - "main"
+  
+ 
 jobs:
   first-workflow-job:
     name: first job
