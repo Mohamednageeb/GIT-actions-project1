@@ -17,29 +17,21 @@ jobs:
         shell: bash
 
       - name: checkout step
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 
         
       - name: after checkout action
         run: ls 
-        shell: bash
+        shell: bash 
 
-      - name: Print input value
+      - name: Print input value  # ← Fixed: space after hyphen
         run: echo "Version: ${{ github.event.inputs.versionName }}"
-
+        
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '11'
           distribution: 'temurin'
-
-      - name: Cache Maven packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
+          
       - name: run maven
-        run: mvn clean package
+        run: mvn clean package 
         shell: bash
