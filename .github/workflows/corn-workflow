@@ -1,0 +1,12 @@
+name: corn-workflow
+
+on:
+  schedule:
+    - corn: "0/5 * * * *"
+    - corn: "0/20 1 * * *"
+
+jobs:
+ corn-workflow:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "corn workflow"
