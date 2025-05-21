@@ -1,7 +1,7 @@
 name: first workflow using dispatch
 on:
-repository_dispatch:
- types: [test]
+ repository_dispatch:
+  types: [test]
 
   push:
    branches:
