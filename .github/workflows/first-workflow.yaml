@@ -1,38 +1,26 @@
 name: first workflow
-
 on:
-  workflow_dispatch:
-    inputs:
-      versionName:
-        required: true
-        description: "This is version name for GitHub workflow"
+  # workflow_dispatch:
+  #   inputs:
+  #     versionName:
+  #       required: true
+  #       description: "This is version name for GitHub workflow"
+ push
 
 jobs:
-  first-workflow-job:
+  first-workflosw-job:
     name: first job
     runs-on: ubuntu-latest
     steps:
-      - name: before checkout action
-        run: ls
-        shell: bash
+     - name: before checkout action
+       run: ls
+       shell: bash
 
-      - name: checkout step
-        uses: actions/checkout@v4
-        
-      - name: after checkout action
-        run: ls
-        shell: bash
+     - name: checkout step
+       uses: actions/checkout@v4 
+       
+     - name: after checkout action
+       if: gutbub.ref =='refs/head/feature'
+       run: ls 
 
-      - name: Print input value
-        run: 
-         echo "version: ${{ github.event.inputs.versionName }}"
-
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          
-      - name: run maven
-        run: mvn clean package
-        shell: bash
+       shell: bash 
